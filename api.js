@@ -1,9 +1,6 @@
-const Pool = require('pg').Pool;
-const types = require('pg').types
+const { Pool, types } = require('pg');
 
-types.setTypeParser(1700, function(val) {
-  return parseFloat(val)
-});
+types.setTypeParser(1700, parseFloat);
 
 const pool = new Pool({
   user: 'moviefan',

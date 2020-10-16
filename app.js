@@ -18,7 +18,7 @@ app.listen(port, () => {
   console.log(`Horror movie app is running on port ${port}.`);
 });
 
-const treatmentMiddleware = function (request, response, next) {
+const treatmentMiddleware = (request, response, next) => {
     const userEmail = request.headers['authorization'];
     request.treatment = client.getTreatment(userEmail, 'database_split');
     next();
